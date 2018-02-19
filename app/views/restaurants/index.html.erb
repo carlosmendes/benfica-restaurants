@@ -1,0 +1,40 @@
+<h1>Restaurants</h1>
+
+<!-- WRONG WAY of defining variables! -->
+<% restaurants = [{name: 'Catedral', category: 'Portuguese'},
+                  {name: 'Maracanã', category: 'Brazilian'}] %>
+<!-- DEFINE these data on the controller instead -->
+
+
+<p>Filter by category</p>
+
+<!-- by cliclink on submit you go tø the link on the action -->
+<form action="/restaurants" method="get">
+  <input type="text" name="category" placeholder="What kind of food?">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= restaurant[:name] %> - <%= restaurant[:category] %></li>
+  <% end %>
+</ul>
+
+
+<p>Create new Restaurant</p>
+
+<form action="/restaurants" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="category" placeholder="Category">
+  <input type="submit">
+</form>
+
+
+
+
+
+
+
+
+

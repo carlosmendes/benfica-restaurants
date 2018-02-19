@@ -1,0 +1,12 @@
+<h1>Restaurant <%= @restaurant[:name] %></h1>
+
+<!-- HTML VERSION -->
+<a href="/restaurants">List Restaurants</a>
+<!-- Rails beta version -->
+<%= link_to("List Restaurants", "/restaurants") %>
+<!-- Rails final version -->
+<%= link_to("List Restaurants", restaurants_path) %>
+
+
+<!-- Link to About -->
+<%= link_to("About us", about_us_path) %>
